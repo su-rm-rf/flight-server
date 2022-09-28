@@ -1,9 +1,32 @@
 import Router from 'koa-router'
+
+import CommonController from '../controllers/CommonController.js'
+import AirlineController from '../controllers/AirlineController.js'
 import FlightController from '../controllers/FlightController.js'
+import SeatController from '../controllers/SeatController.js'
 
 const router = new Router()
-const { list } = new FlightController()
 
-router.get('/flight/list', list)
+const { cityList, signin, signup, getUser } = new CommonController()
+const { airlineList, airlineAdd } = new AirlineController()
+const { flightList, flightSeats, flightAdd } = new FlightController()
+const { seatList, seat, seatAddOrUpdate } = new SeatController()
+
+router.get('/city/list', cityList)
+
+router.post('/user/signin', signin)
+router.post('/user/signup', signup)
+router.get('/user/:uid', getUser)
+
+router.get('/airline/list', airlineList)
+router.post('/airline/add', airlineAdd)
+
+router.get('/flight/list', flightList)
+router.get('/flight/seats', flightSeats)
+router.post('/flight/add', flightAdd)
+
+router.get('/seat/list', seatList)
+router.get('/seat/:sid', seat)
+router.post('/seat/add', seatAddOrUpdate)
 
 export default router

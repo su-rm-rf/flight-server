@@ -3,13 +3,13 @@ import DB from '../db/index.js'
 const { Schema, model } = DB
 
 const FlightSchema = new Schema({
-  name: String,
-  depature: String,
-  destination: String,
-  date: String,
-  leaveTime: String,
-  arriveTime: String,
-  airlineID: [{ type: Schema.Types.ObjectId, ref: 'Airline'}],
+  code: String, // 编号
+  depature: String, // 出发地code
+  destination: String, // 目的地code
+  leaveDate: String, // 出发日期
+  leaveTime: String, // 出发时间
+  arriveTime: String, // 抵达时间
+  airline: { type: Schema.Types.ObjectId, ref: 'Airline' } // 航司ID
 })
 
 export default model('Flight', FlightSchema)

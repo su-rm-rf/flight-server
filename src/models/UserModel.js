@@ -5,7 +5,7 @@ const { Schema, model } = DB
 const UserSchema = new Schema({
   name: String,
   password: String,
-  cardID: String,
+  cardID: Number,
   telephone: Number,
   email: String,
   role: Number

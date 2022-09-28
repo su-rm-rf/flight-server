@@ -4,11 +4,11 @@ MongoDB
 Redis
 
 # 表字段
-城市City: id, name
-航司Airline: name
-航班Flight: depature, destination, date, leaveTime, arriveTime, airlineID
-座位Seat: type, number, price, flightID
-用户User: userName, password, role, cardID, telephone, email
+城市City: id, name, code
+航司Airline: aid, name, code
+航班Flight: fid, code, depature(cid), destination(cid), leaveDate, leaveTime, arriveTime, airlineID
+座位Seat: sid, type, number, price, flightID
+用户User: uid, userName, password, role, cardID, telephone, email
 
 
 # Koa

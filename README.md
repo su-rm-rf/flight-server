@@ -9,7 +9,8 @@ Redis
 航班Flight: fid, code, depature(cid), destination(cid), leaveDate, leaveTime, arriveTime, airlineID
 座位Seat: sid, type, number, price, flightID
 用户User: uid, userName, password, role, cardID, telephone, email
-
+游客Passenger：pid, name, cardID, telephone, email
+订单Order：oid, seat, flight, passenger, user, status
 
 # Koa
 koa-router

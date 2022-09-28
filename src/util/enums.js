@@ -8,3 +8,9 @@ export const ROLES = {
   1: '管理员',
   2: '普通用户'
 }
+
+export const ORDER_STATUS = {
+  0: '未支付',
+  1: '已完成',
+  2: '已取消',
+}

@@ -1,3 +1,5 @@
+import AirlineModel from "../models/AirlineModel.js"
+import FlightModel from "../models/FlightModel.js"
 import SeatModel from "../models/SeatModel.js"
 
 import { SEATS } from '../util/enums.js'
@@ -33,5 +35,18 @@ export default class SeatController {
       seat2 = await SeatModel.findByIdAndUpdate(sid, body)
     }
     ctx.body = seat2
+  }
+
+  async seatInfo(ctx) {
+    const sid = ctx.request.query.sid
+    const seat = await SeatModel.findById(sid)
+    const flight = await FlightModel.findById(seat.flight)
+    const airline = await AirlineModel.findById(flight.airline)
+    const seatInfo = {
+      flightName: airline.name + flight.code,
+      seatName: SEATS[seat.type],
+      price: seat.price
+    }
+    ctx.body = seatInfo
   }
 }

@@ -8,8 +8,8 @@ import { SEATS } from '../util/enums.js'
 export default class FlightController {
   async flightList(ctx) {
     const params = ctx.request.query
-    // const flights = await FlightModel.find(params)
-    const flights = await FlightModel.find()
+    const flights = await FlightModel.find(params)
+    // const flights = await FlightModel.find()
     let flights2 = []
     for (let i=0; i<flights.length; i++) {
       let flightDTO = {}, flight = flights[i]

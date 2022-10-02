@@ -8,9 +8,11 @@ const SeatSchema = new Schema({
   // number: String, // 座位号码
   price: String, // 价格
   flight: { type: Schema.Types.ObjectId, ref: 'Flight' }, // 航班ID
+  deleteFlag: { type: String, default: 'N' },
   meta: {
-    createTime: { type: String, value: moment().format('YYYY-MM-DD hh:mm:ss') },
-    updateTime: { type: String, value: moment().format('YYYY-MM-DD hh:mm:ss') },
+    createTime: { type: String, default: moment().format('YYYY-MM-DD HH:mm:ss') },
+    updateTime: { type: String, default: moment().format('YYYY-MM-DD HH:mm:ss') },
+    deleteTime: { type: String, default: '' },
   },
 })
 

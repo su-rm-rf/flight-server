@@ -39,7 +39,8 @@ export default class AirlineController {
   }
   
   async airlineAdd(ctx) {
-    const airline = await new AirlineModel(ctx.request.body).save()
+    const airlineModel = ctx.request.body
+    const airline = await new AirlineModel(airlineModel).save()
     ctx.body = airline
   }
 }

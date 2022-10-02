@@ -30,3 +30,9 @@ field <——> column
 外键 population [{ type, ref: ModelName }]
 
 # Redis
+内存数据库
+记录：用户session，页面访问数
+
+redis-server
+RESP
+

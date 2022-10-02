@@ -16,4 +16,9 @@ mongoose.connection.on('disconnected', () => {
   console.log(`mongoose connection disconnected`)
 })
 
+export const REDIS_CONFIG = {
+  port: 6379,
+  host: 'localhost'
+}
+
 export default mongoose

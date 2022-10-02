@@ -11,6 +11,6 @@ export const ROLES = {
 
 export const ORDER_STATUS = {
   0: '未支付',
-  1: '已完成',
+  1: '已支付',
   2: '已取消',
 }

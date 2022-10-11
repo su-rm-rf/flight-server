@@ -5,8 +5,8 @@ export const SEATS = {
 }
 
 export const ROLES = {
-  1: '管理员',
-  2: '普通用户'
+  1: '普通用户',
+  2: '管理员',
 }
 
 export const ORDER_STATUS = {

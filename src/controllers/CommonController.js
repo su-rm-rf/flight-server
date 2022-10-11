@@ -31,7 +31,7 @@ export default class CommonController {
       cardID: body.cardID,
       telephone: body.telephone,
       email: body.email,
-      role: 2
+      role: Number(body.role) || 1
     }
     const user = await new UserModel(userModel).save()
     ctx.body = {
